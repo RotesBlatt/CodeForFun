@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightDoSoemething : MonoBehaviour
 {   
     public float rotation;
+
     // Start is called before the first frame update
     void Start()
     {

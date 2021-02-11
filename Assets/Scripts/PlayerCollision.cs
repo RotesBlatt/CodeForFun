@@ -3,9 +3,16 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {   
-    private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag == "Respawn"){
-            Debug.Log("HEYY");
+    void Update(){
+        if(Input.GetKey(KeyCode.R)){
+            alla();
         }
+    }
+    
+    // private void OnControllerColliderHit(ControllerColliderHit hit) {
+    //     Debug.Log("ASDAD");
+    // }
+    public void alla(){
+        Debug.Log("AALALAL");
     }
 }
