@@ -6,7 +6,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
 
-    public float mouseSensitivity = 150f;
+    public float mouseSensitivity = 500f;
 
     public Transform playerBody;
 
