@@ -2,9 +2,10 @@
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
-{
-    private void OnTriggerEnter(Collision collision){
-        Destroy(collision.gameObject);
-        Debug.Log("help");
+{   
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.tag == "Respawn"){
+            Debug.Log("HEYY");
+        }
     }
 }

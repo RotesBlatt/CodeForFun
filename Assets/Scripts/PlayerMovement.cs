@@ -51,9 +51,4 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
         
     }
-
-    private void OnCollisionEnter(Collision collision){
-        Destroy(collision.gameObject);
-        Debug.Log("Help");
-    }
 }
