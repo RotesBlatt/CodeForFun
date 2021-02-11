@@ -329,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 813453476}
   speed: 12
-  sprintSpeed: 18
+  sprintSpeed: 50
   gravity: -19.62
   jumpHeight: 3
   groundCheck: {fileID: 456570090}
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d1e9d57c4df994aac4fb6eb9bf5c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 500
   playerBody: {fileID: 813453477}
 --- !u!1 &1587348871
 GameObject:
