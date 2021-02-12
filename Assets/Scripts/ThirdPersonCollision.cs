@@ -35,7 +35,7 @@ public class ThirdPersonCollision : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        //Debug.Log("Geh rein");
+        Debug.Log("Geh rein");
         isNear = true;
     }
 
@@ -44,7 +44,7 @@ public class ThirdPersonCollision : MonoBehaviour
     // }
 
     private void OnCollisionExit(Collision other) {
-        //Debug.Log("Bin raus");
+        Debug.Log("Bin raus");
         isNear = false;
     }
 
