@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ThirdPersonCollision : MonoBehaviour
 {
     public bool isNear = false;
 
     public float bedCd;
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -23,9 +17,9 @@ public class ThirdPersonCollision : MonoBehaviour
         LightDoSoemething light = gameObject.GetComponent<LightDoSoemething>();
         
 
-        if(isNear && Input.GetKey(KeyCode.E) && bedCd <= 0){
+        if(isNear && Input.GetKeyDown(KeyCode.E) && bedCd <= 0){
             light.setRotation(Random.Range(40, 160));
-            bedCd = 1;
+            bedCd = 5;
             //Debug.Log("E");
         }
 
@@ -34,21 +28,22 @@ public class ThirdPersonCollision : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other) {
-        Debug.Log("Geh rein");
+    private void OnTriggerEnter(Collider other) {
         isNear = true;
+        //Debug.Log("YES");
     }
 
-    // private void OnCollisionStay(Collision other) {
-    //     Debug.Log("Bin Drin");
+    // private void OnTriggerStay(Collider other) {
+    //     isNear = true;
+    //     Debug.Log("Hold my Beer");
     // }
 
-    private void OnCollisionExit(Collision other) {
-        Debug.Log("Bin raus");
+    private void OnTriggerExit(Collider other) {
         isNear = false;
+        //Debug.Log("No");
     }
 
-    // private void OnControllerColliderHit(ControllerColliderHit hit) {
-    //     Debug.Log("Cheese");
-    // }
+    public float getBedCd(){
+        return bedCd;
+    }
 }

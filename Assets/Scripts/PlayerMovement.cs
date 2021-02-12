@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     
     
     public float speed = 12f;
-    public float sprintSpeed = 50f;
+    public float sprintSpeed = 24f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
 
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) && isGrounded)
         {
             speed = sprintSpeed;
         }
@@ -61,8 +61,4 @@ public class PlayerMovement : MonoBehaviour
 
         
     }
-
-    // private void OnControllerColliderHit(ControllerColliderHit hit) {
-    //     Debug.Log("ASDAD");
-    // }
 }
