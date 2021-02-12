@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456570089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.64, z: 0}
+  m_LocalPosition: {x: 0, y: -1.843, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 813453477}
@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 813453476}
   - component: {fileID: 813453478}
   - component: {fileID: 813453479}
+  - component: {fileID: 813453480}
   m_Layer: 0
   m_Name: First Person Player
   m_TagString: Untagged
@@ -337,18 +338,36 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &813453479
-MonoBehaviour:
+--- !u!136 &813453479
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813453475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e70f20685aef5384d80ace904bec16b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 0.6
+  m_Height: 3.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &813453480
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813453475}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,9 +574,10 @@ GameObject:
   - component: {fileID: 1617428812}
   - component: {fileID: 1617428811}
   - component: {fileID: 1617428810}
+  - component: {fileID: 1617428814}
   m_Layer: 6
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -570,8 +590,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617428808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.22, y: 0.37, z: 10.44}
-  m_LocalScale: {x: 4.0005, y: 0.4637, z: 2.1501}
+  m_LocalPosition: {x: -1.22, y: 0.22, z: 10.44}
+  m_LocalScale: {x: 4.0005, y: 0.3482619, z: 2.1501}
   m_Children: []
   m_Father: {fileID: 1665520385}
   m_RootOrder: 2
@@ -590,7 +610,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &1617428811
 BoxCollider:
@@ -654,6 +674,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617428808}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1617428814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617428808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886c36ba538577340886df80d470fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNear: 0
+  bedCd: 0
 --- !u!1 &1652360991
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +828,7 @@ GameObject:
   - component: {fileID: 1882900076}
   - component: {fileID: 1882900078}
   - component: {fileID: 1882900077}
+  - component: {fileID: 1882900079}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -864,3 +899,15 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882900075}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1882900079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882900075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70f20685aef5384d80ace904bec16b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

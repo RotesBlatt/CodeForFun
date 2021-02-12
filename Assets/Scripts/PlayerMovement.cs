@@ -13,11 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 3f;
 
     public Transform groundCheck;
-    public float groundDistance = 0.2f;
+    public float groundDistance = 2f;
     public LayerMask groundMask;
 
     Vector3 velocity;
     bool isGrounded;
+    bool hasJumped = false;
 
     // Update is called once per frame
     void Update()
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(isGrounded && velocity.y < 0){
             velocity.y = 0f;
+            hasJumped =false;
         }
 
         float x = Input.GetAxis("Horizontal");
@@ -46,17 +48,21 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
+
+
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if(Input.GetButtonDown("Jump") && !isGrounded && !hasJumped){
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            hasJumped = true;
+        }
+
         
     }
 
-    void OnTriggerEvent(Collider other)
-    {
-        if(other.tag == "CollisionTest")
-        {
-            Debug.Log("Collision Detected");
-        }
-    }
+    // private void OnControllerColliderHit(ControllerColliderHit hit) {
+    //     Debug.Log("ASDAD");
+    // }
 }
