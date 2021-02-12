@@ -52,8 +52,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision){
-        Destroy(collision.gameObject);
-        Debug.Log("Help");
+    void OnTriggerEvent(Collider other)
+    {
+        if(other.tag == "CollisionTest")
+        {
+            Debug.Log("Collision Detected");
+        }
     }
 }
