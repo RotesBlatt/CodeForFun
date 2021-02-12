@@ -59,6 +59,10 @@ public class PlayerMovement : MonoBehaviour
             hasJumped = true;
         }
 
+        if(transform.position.y < -1f){
+            FindObjectOfType<GameManager>().EndGame();
+        }
+
         
     }
 }

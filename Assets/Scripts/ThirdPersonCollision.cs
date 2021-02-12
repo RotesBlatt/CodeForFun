@@ -11,14 +11,9 @@ public class ThirdPersonCollision : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        //
-        GameObject gameObject = GameObject.Find("Directional Light");
-        LightDoSoemething light = gameObject.GetComponent<LightDoSoemething>();
-        
-
+    {       
         if(isNear && Input.GetKeyDown(KeyCode.E) && bedCd <= 0){
-            light.setRotation(Random.Range(40, 160));
+            FindObjectOfType<LightDoSoemething>().setRotation(Random.Range(40, 160));
             bedCd = 5;
             //Debug.Log("E");
         }

@@ -1,18 +1,12 @@
-
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {   
-    void Update(){
-        if(Input.GetKey(KeyCode.R)){
-            alla();
-        }
-    }
-    
-    // private void OnControllerColliderHit(ControllerColliderHit hit) {
-    //     Debug.Log("ASDAD");
+
+    // private void OnCollisionEnter(Collision other) {
+    //     if(other.collider.tag == "Finish"){
+    //         FindObjectOfType<GameManager>().EndGame();
+    //     }
     // }
-    public void alla(){
-        Debug.Log("AALALAL");
-    }
+
 }

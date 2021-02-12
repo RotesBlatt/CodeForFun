@@ -18,14 +18,14 @@ public class ButtonPress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject gameObject = GameObject.Find("Door");
-        Door pressButton = gameObject.GetComponent<Door>();
+        // GameObject gameObject = GameObject.Find("Door");
+        //Door pressButton = gameObject.GetComponent<Door>();
 
         if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Button Pressed");
 
-            pressButton.DeleteDoor(ID);
+            //pressButton.DeleteDoor(ID);
         }
     }
 
