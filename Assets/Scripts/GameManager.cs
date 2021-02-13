@@ -5,13 +5,13 @@ public class GameManager : MonoBehaviour
 {
     bool gameEnded = false;
     
-    public GameObject finishGamelUI;
+    public GameObject finishGameUI;
 
     public float restartDelay = 1f;
 
 
     public void finishGame(){
-        finishGamelUI.SetActive(true);
+        finishGameUI.SetActive(true);
     }
      
     public void EndGame(){
@@ -20,6 +20,14 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Over");
             Invoke("End", restartDelay);
         }
+    }
+
+    public void RestartGame(){
+        Invoke("Restart", restartDelay);
+    }
+
+    void Restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void End(){

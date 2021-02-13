@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af77949d65bead45abad272747556c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 779838919}
 --- !u!135 &237078719
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -725,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e300268add34e4e90ad0bcf78f1b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finishGamelUI: {fileID: 613845717}
+  finishGameUI: {fileID: 613845717}
   restartDelay: 1
 --- !u!4 &779838920
 Transform:

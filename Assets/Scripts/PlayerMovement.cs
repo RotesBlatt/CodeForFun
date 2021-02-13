@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
@@ -60,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if(transform.position.y < -1f){
-            FindObjectOfType<GameManager>().EndGame();
+            FindObjectOfType<GameManager>().RestartGame();
         }
 
         
